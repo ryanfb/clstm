@@ -22,7 +22,11 @@
 extern "C" {
 #include <assert.h>
 #include <math.h>
+#ifdef __APPLE__
+#include <crt_externs.h>
+#else
 #include <unistd.h>
+#endif
 }
 
 #include <string>
@@ -676,7 +680,11 @@ void srandomize() {
   random_state = getienv("seed", 0);
   if (random_state == 0) {
     random_state = (unsigned long)fmod(now() * 1e6, 1e9);
+#ifdef __APPLE__
+    char **ep = *_NSGetEnviron();
+#else
     char **ep = environ;
+#endif
     while (*ep) {
       char *p = *ep++;
       while (*p) random_state = 17 * random_state + *p++;
