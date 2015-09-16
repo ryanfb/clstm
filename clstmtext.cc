@@ -1,19 +1,20 @@
-#include "pstring.h"
-#include "clstm.h"
 #include <assert.h>
 #include <iostream>
 #include <vector>
 #include <memory>
 #include <math.h>
 #include <Eigen/Dense>
+#include <iostream>
 #include <sstream>
 #include <fstream>
-#include <iostream>
 #include <set>
 
 #include "multidim.h"
 #include "pymulti.h"
 #include "extras.h"
+
+#include "pstring.h"
+#include "clstm.h"
 
 using namespace Eigen;
 using namespace ocropus;
@@ -370,7 +371,7 @@ int main_filter(int argc, char **argv) {
 
   string line;
   wstring in, out;
-  ;
+
   ifstream stream(fname);
   int trial = 0;
   while (getline(stream, line)) {

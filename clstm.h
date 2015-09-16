@@ -158,10 +158,10 @@ struct ITrainable {
   Float momentum = 0.9;
   enum Normalization : int {
     NORM_NONE,
-    NORM_LEN,
-    NORM_BATCH,
-    NORM_DFLT = NORM_NONE,
-  } normalization = NORM_DFLT;
+        NORM_LEN,
+        NORM_BATCH,
+        NORM_DFLT = NORM_NONE,
+        } normalization = NORM_DFLT;
 
   // The attributes array contains parameters for constructing the
   // network, as well as information necessary for loading and saving
